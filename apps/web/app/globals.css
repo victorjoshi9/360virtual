@@ -1,0 +1,229 @@
+:root {
+  --bg: #0b1018;
+  --bg-soft: rgba(12, 18, 29, 0.56);
+  --txt: #f4f7fb;
+  --txt-soft: #b6c2d4;
+  --glass-border: rgba(255, 255, 255, 0.16);
+  --accent: #00d1ff;
+  --accent-2: #44ffa1;
+  --warn: #ffcc6d;
+  --danger: #ff6f91;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(circle at 20% 20%, #162336 0%, #0a1018 52%, #080c12 100%);
+  color: var(--txt);
+  font-family: "Sora", "Avenir Next", "Segoe UI", sans-serif;
+}
+
+.home-root {
+  min-height: 100dvh;
+  padding: 24px;
+  display: grid;
+  place-content: center;
+  gap: 12px;
+}
+
+.home-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.chip {
+  text-decoration: none;
+  color: var(--txt);
+  border: 1px solid var(--glass-border);
+  background: var(--bg-soft);
+  border-radius: 999px;
+  padding: 10px 14px;
+  backdrop-filter: blur(8px);
+}
+
+.tour-root {
+  position: relative;
+  width: 100vw;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+.pano-frame {
+  position: absolute;
+  inset: 0;
+  transition: opacity 220ms ease;
+}
+
+.pano-frame.fading {
+  opacity: 0;
+}
+
+.pano-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(1.08) contrast(1.02);
+  transform-origin: center;
+  transition: transform 120ms linear;
+}
+
+.vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 32%, rgba(5, 8, 14, 0.68) 100%);
+  pointer-events: none;
+}
+
+.hotspot {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: linear-gradient(130deg, rgba(0, 209, 255, 0.42), rgba(68, 255, 161, 0.32));
+  color: white;
+  border-radius: 999px;
+  padding: 8px 10px;
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.hotspot:hover {
+  transform: translate(-50%, -50%) scale(1.04);
+  box-shadow: 0 8px 26px rgba(0, 209, 255, 0.42);
+}
+
+.arrow {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.hotspot-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.top-chip,
+.hud-chip,
+.floor-panel,
+.control-stack button {
+  border: 1px solid var(--glass-border);
+  background: var(--bg-soft);
+  backdrop-filter: blur(8px);
+}
+
+.top-chip {
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.share-chip {
+  background: rgba(7, 11, 18, 0.35);
+}
+
+.hud-chip {
+  position: absolute;
+  bottom: 84px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  padding: 8px 14px;
+  display: flex;
+  gap: 12px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.control-stack {
+  position: absolute;
+  bottom: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.control-stack.left {
+  left: 12px;
+}
+
+.control-stack.right {
+  right: 12px;
+}
+
+.control-stack button {
+  color: var(--txt);
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.floor-panel {
+  position: absolute;
+  top: 70px;
+  right: 12px;
+  border-radius: 14px;
+  padding: 10px;
+  width: 110px;
+}
+
+.floor-panel p {
+  margin: 0 0 8px;
+  color: var(--txt-soft);
+  font-size: 11px;
+}
+
+.floor-panel div {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.floor-panel button {
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.06);
+  color: white;
+  border-radius: 8px;
+  font-size: 11px;
+  padding: 6px 8px;
+  cursor: pointer;
+}
+
+.floor-panel button.active {
+  background: rgba(0, 209, 255, 0.3);
+  border-color: rgba(0, 209, 255, 0.6);
+}
+
+.floor-panel small {
+  margin-top: 7px;
+  display: block;
+  color: var(--txt-soft);
+  font-size: 10px;
+}
+
+@media (min-width: 900px) {
+  .top-chip {
+    top: 20px;
+  }
+
+  .floor-panel {
+    top: 88px;
+  }
+}
