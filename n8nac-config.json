@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "activeInstanceId": "instance-05ee3790",
+  "instances": [
+    {
+      "id": "instance-05ee3790",
+      "name": "localhost",
+      "host": "http://localhost:5678",
+      "syncFolder": "workflows",
+      "verification": {
+        "status": "failed",
+        "lastCheckedAt": "2026-04-11T12:30:48.502Z",
+        "lastError": "Unable to reach the configured n8n instance."
+      }
+    }
+  ],
+  "host": "http://localhost:5678",
+  "syncFolder": "workflows"
+}

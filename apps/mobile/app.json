@@ -1,0 +1,26 @@
+{
+  "expo": {
+    "name": "360virtual-capture",
+    "slug": "capture360",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "splash": {
+      "backgroundColor": "#070c14",
+      "resizeMode": "contain"
+    },
+    "userInterfaceStyle": "dark",
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "android": {
+      "permissions": [
+        "CAMERA"
+      ]
+    },
+    "ios": {
+      "infoPlist": {
+        "NSCameraUsageDescription": "Capture 360 frames for virtual tours."
+      }
+    }
+  }
+}
